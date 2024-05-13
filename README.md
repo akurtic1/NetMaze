@@ -47,7 +47,7 @@ didn't raliste that I didn't have to put the Public IP address as a number but a
 
 This is the command I used to successfully deploy the VPN Gateway: 
 az network vnet-gateway create --resource-group az-104 --name MyVpnGateway --vnet MyVNet --gateway-type Vpn --sku VpnGw1 --vpn-type RouteBased --public-ip-address MyPublicIP --no-wait
-![Screenshot of the Deployment in Task 4](./Media/task3-error-vpn-gateway.png)
+![Screenshot of the Deployment in Task 4](./Media/task3-deployed-vpn-gateway.png)
 
 After deploying the VPN gateways, I used the following VPN Gateways to connect the Virtual Networks.
 As you can see on the screenshot below, it is connected.
