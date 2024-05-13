@@ -21,19 +21,19 @@ Link for the Diagram: https://github.com/akurtic1/NetMaze/blob/17ca6f7e759e4a43e
 
 ## Tasks - Step by Step
 
-+ Task 1: Provision VNet and create multiple subnets for different resources (for example: DataSubnet, AdminSubnet...)
+### Task 1: Provision VNet and create multiple subnets for different resources (for example: DataSubnet, AdminSubnet...)
 
 So, in this task, I used Azure CLI to provision Vnet and create multiple subnets.
 As a result, It was deployed successfully and you can see my command prompt file how I started the provisioning process.
 ![Command Prompt of the first task](./Media/deployment-done-t1-cli.png)
 Also, I checked on the Azure Portal to confirm that everything is deployed.
 
-+ Task 2: Making another VNet to simulate on-premises environment.
+### Task 2: Making another VNet to simulate on-premises environment.
 
 In this task, I used the same command for deploying another VNet, only of course with a different names and IP prefixes.
 Command I used for this task: az network vnet create --resource-group az-104 --name OnPremVNet --address-prefixes 192.168.0.0/16 --subnet-name OnPremSubnet --subnet-prefix 192.168.1.0/24
 
-+ Task 3: Implementing Azure VPN gateway to create site-to-site VPN connection between simulated on-prem env(VNet) and my main Azure VNet which
+### Task 3: Implementing Azure VPN gateway to create site-to-site VPN connection between simulated on-prem env(VNet) and my main Azure VNet which
 I created on the "Task 1".
 
 First, in this task I created a VPN Gateway subnet. Before creating a VPNGateway in my main VNet, I had to create
@@ -55,19 +55,19 @@ As you can see on the screenshot below, it is connected.
 
 ### Link to my command prompt history and commands: [Media/cli-creating-vnet-t1.txt](https://github.com/akurtic1/NetMaze/blob/17ca6f7e759e4a43eca64ba3503292ac55445245/Media/cli-creating-vnet-t1.txt)
 
-+ Task 4: Deploying a test resources in each subnet of main Virtual Network.
+### Task 4: Deploying a test resources in each subnet of main Virtual Network.
 
 So, In this task I have deployed the test resources in the virtual network for each subnet.
 In this task, I have used Azure Portal to deploy the following resources.
 
-+ Task 5: Deploying a NSG (Network Security Group) to define inbound and outbound rules.
+### Task 5: Deploying a NSG (Network Security Group) to define inbound and outbound rules.
 
 In the previous task, when I deployed the test VMs, I already assigned the NSG, so 
 in this case, I was assigning the NSG rules. As you can see on the screenshot below,
 I have assigned the NSG rules and you can see all the information such as destination, source, protocol...
 ![Network Security Group Rules](./Media/nsg-deploy-task5.png)
 
-+ Task 6: Implementing Azure Bastion
+### Task 6: Implementing Azure Bastion
 
 So, in this task I have deployed the Azure Bastion. When I tried to deploy the Azure Bastion,
 the error message was stating that I need to create a new subned with the name "AzureBastionSubnet" with the prefix with at least /26.
@@ -79,7 +79,7 @@ For the outbound rule I defined to allow outbound traffic from Azure Bastion to 
 If I deployed a Windows image, I would put port 3389.
 ![Bastion Connect - LinuxVM](./Media/bastion-connecting.png)
 
-+ Task 7: Implementing Azure Private Link
+### Task 7: Implementing Azure Private Link
 
 In this task, I deployed a Private Endopoint. When I tried to deploy a Private Endpoint, I couldn't select my
 VM's because they are not supported. Instead of that, I tried to test it with deploying My SQl Server and
@@ -88,7 +88,7 @@ withing deploying SQL server, I also configured a Private Endpoint.
 You can see on the screenshot below that Private Endpoint is deployed with "approved" state.
 ![Private Endpoint - Deployment](./Media/private-endpoint.png)
 
-+ Task 8: DNS and Load Balancing
+### Task 8: DNS and Load Balancing
 
 As for the DNS & Load Balancing task, I deployed both of theese resources and checked the configuration and properties for these resources.
 Most of the resources are deployed with the way to test and learn about the resources and how they are configured. Especially for the last
