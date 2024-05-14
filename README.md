@@ -35,8 +35,7 @@ Also, I checked on the Azure Portal to confirm that everything is deployed.
 In this task, I used the same command for deploying another VNet, only of course with a different names and IP prefixes.
 Command I used for this task: az network vnet create --resource-group az-104 --name OnPremVNet --address-prefixes 192.168.0.0/16 --subnet-name OnPremSubnet --subnet-prefix 192.168.1.0/24
 
-### Task 3: Implementing Azure VPN gateway to create site-to-site VPN connection between simulated on-prem env(VNet) and my main Azure VNet which
-I created on the "Task 1".
+### Task 3: Implementing Azure VPN gateway to create simulated on-prem env(VNet) and my main Azure VNet 
 
 First, in this task I created a VPN Gateway subnet. Before creating a VPNGateway in my main VNet, I had to create
 a Public IP first with the following command: az network public-ip create --resource-group az-104 --name MyPublicIP --sku Standard --allocation-method Static
