@@ -45,7 +45,7 @@ So, when I wanted to Create a VPN Gateway in my Main VNet, I received the error.
 ![Screenshot of the Error in Task 3](./Media/task3-error-vpn-gateway.png)
 
 With help of ChatGPT and Copilot, I still couldn't figure out what was the problem until I 
-didn't raliste that I didn't have to put the Public IP address as a number but as a resource.
+didn't realise that I didn't have to put the Public IP address as a number but as a resource.
 
 This is the command I used to successfully deploy the VPN Gateway: 
 az network vnet-gateway create --resource-group az-104 --name MyVpnGateway --vnet MyVNet --gateway-type Vpn --sku VpnGw1 --vpn-type RouteBased --public-ip-address MyPublicIP --no-wait
